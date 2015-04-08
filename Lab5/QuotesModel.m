@@ -95,6 +95,13 @@ NSString *const QuotesPlist = @"quotes.plist";
     return [self.favorites objectAtIndex:index];
 }
 
+-(void) addQuoteToFavorites{
+    if([self numberOfQuotes])
+    {
+        [self insertFavorite:[self quoteAtIndex:self.currentIndex] atIndex:0];
+    }
+}
+
 - (NSDictionary *) randomQuote{
     if([self numberOfQuotes]){
         NSUInteger index = random() % [self numberOfQuotes];

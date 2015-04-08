@@ -55,14 +55,14 @@
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:17.0];
-    //NSDictionary * quotesDict = [self.model quoteAtIndex:indexPath.row];
+    NSDictionary * quotesDict = [self.model favoriteAtIndex:indexPath.row];
     
-    //NSString *quote = quotesDict[@"quote"];
-    //NSString *author = quotesDict[@"author"];
-    cell.detailTextLabel.text = @"Test";
-    cell.textLabel.text = @"Test";
+    NSString *quote = quotesDict[@"quote"];
+    NSString *author = quotesDict[@"author"];
+    cell.detailTextLabel.text = author;
+    cell.textLabel.text = quote;
     
-    return cell;    return cell;
+    return cell;
 }
 
 

@@ -187,13 +187,14 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="xDh-zb-9ai"/>
                         <segue destination="TBU-bz-sq8" kind="relationship" relationship="viewControllers" id="VEW-hh-IbB"/>
+                        <segue destination="QlQ-dd-P5e" kind="relationship" relationship="viewControllers" id="gBx-aC-PLd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ut-RE-SS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="274"/>
         </scene>
-        <!--Favorites View Controller-->
+        <!--Favorites-->
         <scene sceneID="I0s-Tp-pJH">
             <objects>
                 <tableViewController id="QlQ-dd-P5e" customClass="FavoritesViewController" sceneMemberID="viewController">
@@ -214,10 +215,11 @@
                             <outlet property="delegate" destination="QlQ-dd-P5e" id="2vE-3n-E7B"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="va7-q0-uec"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4Y-lt-rPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="1746"/>
+            <point key="canvasLocation" x="1015" y="1768"/>
         </scene>
         <!--Library-->
         <scene sceneID="iVZ-NI-oLC">

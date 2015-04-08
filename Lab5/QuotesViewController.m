@@ -33,6 +33,14 @@
                                          initWithTarget:self
                                          action:@selector(singleTapRecognized:)];
     [self.view addGestureRecognizer:singleTap];
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc]
+                                         initWithTarget:self
+                                         action:@selector(doubleTapRecognized:)];
+    doubleTap.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:doubleTap];
+    
+    [singleTap requireGestureRecognizerToFail:doubleTap];
+    
     UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc]
                                            initWithTarget:self
                                            action:@selector(leftSwipeGestureRecognized:)];
@@ -100,11 +108,16 @@
     quoteString = [quoteString stringByAppendingString:@"'. The author is "];
     quoteString = [quoteString stringByAppendingString:testQuoteDict[@"author"]];
     quoteString = [quoteString stringByAppendingString:@"."];
-    NSLog(quoteString,nil);    NSString *quote = currentQuoteDict[@"quote"];
+    NSLog(quoteString,nil);
+    NSString *quote = currentQuoteDict[@"quote"];
     NSString *author = currentQuoteDict[@"author"];
     // play audio
     [self.audioPlayer play];
     [self animateQuote:quote animateAuthor:author];
+}
+
+- (void) doubleTapRecognized: (UITapGestureRecognizer *) recognizer{
+    [self.model addQuoteToFavorites];
 }
 
 - (void) leftSwipeGestureRecognized: (UITapGestureRecognizer *) recognizer{

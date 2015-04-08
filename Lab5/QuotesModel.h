@@ -16,6 +16,7 @@
 - (void) removeFavoriteAtIndex: (NSUInteger) index;
 - (void) insertFavorite: (NSString *) quote author: (NSString *) author atIndex: (NSUInteger) index;
 - (void) insertFavorite: (NSDictionary *) quote atIndex: (NSUInteger) index;
+- (void) addQuoteToFavorites;
 - (NSUInteger) numberOfQuotes;
 - (NSDictionary *) quoteAtIndex: (NSUInteger) index;
 - (void) removeQuoteAtIndex: (NSUInteger) index;
