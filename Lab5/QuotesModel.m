@@ -11,7 +11,6 @@
 @interface QuotesModel ()
 // private properties
 @property(strong, nonatomic)NSMutableArray *quotes;
-@property(strong, nonatomic)NSDictionary *currentQuote;
 @property NSUInteger currentIndex;
 @property(strong, nonatomic)NSMutableArray *favorites;
 @property (strong, nonatomic) NSString *filepath;
@@ -95,11 +94,26 @@ NSString *const QuotesPlist = @"quotes.plist";
     return [self.favorites objectAtIndex:index];
 }
 
+
 -(void) addQuoteToFavorites{
     if([self numberOfQuotes])
     {
-        [self insertFavorite:[self quoteAtIndex:self.currentIndex] atIndex:0];
+        NSDictionary *currentQuote = [self quoteAtIndex:self.currentIndex];
+        
+        if(![self favoritesContainsQuote:currentQuote]){
+            [self insertFavorite:currentQuote atIndex:0];
+        }
     }
+}
+
+-(BOOL) favoritesContainsQuote: (NSDictionary *) currentQuote{
+    for(NSDictionary *quoteDict in self.favorites){
+        NSString *quote = quoteDict[@"quote"];
+        if([currentQuote[@"quote"] isEqualToString:quote]){
+            return YES;
+        }
+    }
+    return NO;
 }
 
 - (NSDictionary *) randomQuote{

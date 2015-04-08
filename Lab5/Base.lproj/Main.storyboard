@@ -187,14 +187,14 @@
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="relationship" relationship="viewControllers" id="xDh-zb-9ai"/>
                         <segue destination="TBU-bz-sq8" kind="relationship" relationship="viewControllers" id="VEW-hh-IbB"/>
-                        <segue destination="QlQ-dd-P5e" kind="relationship" relationship="viewControllers" id="gBx-aC-PLd"/>
+                        <segue destination="0JW-rL-7QZ" kind="relationship" relationship="viewControllers" id="gBx-aC-PLd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ut-RE-SS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="274"/>
         </scene>
-        <!--Favorites-->
+        <!--Favorites View Controller-->
         <scene sceneID="I0s-Tp-pJH">
             <objects>
                 <tableViewController id="QlQ-dd-P5e" customClass="FavoritesViewController" sceneMemberID="viewController">
@@ -203,10 +203,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoritesCell" id="ME5-f5-9Ml">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoritesCell" textLabel="Q80-Mm-9Ut" detailTextLabel="Brj-qe-FMU" style="IBUITableViewCellStyleSubtitle" id="ME5-f5-9Ml">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ME5-f5-9Ml" id="lRV-42-f91">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q80-Mm-9Ut">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Brj-qe-FMU">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -215,11 +229,11 @@
                             <outlet property="delegate" destination="QlQ-dd-P5e" id="2vE-3n-E7B"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Favorites" id="va7-q0-uec"/>
+                    <navigationItem key="navigationItem" id="LPP-vi-CPN"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4Y-lt-rPB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="1768"/>
+            <point key="canvasLocation" x="1827" y="1768"/>
         </scene>
         <!--Library-->
         <scene sceneID="iVZ-NI-oLC">
@@ -239,6 +253,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w06-5h-64S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1015" y="992"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="sdK-qt-kRY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0JW-rL-7QZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favorites" id="va7-q0-uec"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5on-YQ-Khh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="QlQ-dd-P5e" kind="relationship" relationship="rootViewController" id="XiM-vM-sbi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i88-Jd-BqC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015" y="1768"/>
         </scene>
     </scenes>
     <resources>
