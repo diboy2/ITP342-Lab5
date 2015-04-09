@@ -13,7 +13,8 @@
 @property(strong, nonatomic)NSMutableArray *quotes;
 @property NSUInteger currentIndex;
 @property(strong, nonatomic)NSMutableArray *favorites;
-@property (strong, nonatomic) NSString *filepath;
+@property (strong, nonatomic) NSString *quotesFilepath;
+@property (strong, nonatomic) NSString *favoritesFilepath;
 @end
 
 // Dictionary keys
@@ -22,6 +23,7 @@ NSString *const AuthorKey = @"author";
 
 // plist Filename
 NSString *const QuotesPlist = @"quotes.plist";
+NSString *const FavoritesPlist = @"favorites.plist";
 
 @implementation QuotesModel
 +(instancetype) sharedModel {
@@ -41,9 +43,14 @@ NSString *const QuotesPlist = @"quotes.plist";
     if (self) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        _filepath = [documentsDirectory stringByAppendingPathComponent:QuotesPlist];
-        _quotes = [NSMutableArray arrayWithContentsOfFile:_filepath];
-        _favorites = [[NSMutableArray alloc] init];
+        _quotesFilepath = [documentsDirectory stringByAppendingPathComponent:QuotesPlist];
+        _quotes = [NSMutableArray arrayWithContentsOfFile:_quotesFilepath];
+        _favoritesFilepath = [documentsDirectory stringByAppendingPathComponent:FavoritesPlist];
+        _favorites = [NSMutableArray arrayWithContentsOfFile:_favoritesFilepath];
+        
+        if(!_favorites){ // no file
+         	_favorites = [[NSMutableArray alloc] init];
+        }
         
         if(!_quotes) { // no file
             _quotes = [[NSMutableArray alloc] initWithObjects:
@@ -58,13 +65,15 @@ NSString *const QuotesPlist = @"quotes.plist";
     return self;
 }
 - (void) save{
-    [self.quotes writeToFile:self.filepath atomically:YES];
+    [self.quotes writeToFile:self.quotesFilepath atomically:YES];
+    [self.favorites writeToFile:self.favoritesFilepath atomically:YES];
 }
 
 - (void) removeFavoriteAtIndex: (NSUInteger) index{
     NSUInteger numberOfFavorites = [self numberOfFavorites];
     if(index < numberOfFavorites){
         [self.favorites removeObjectAtIndex:index];
+        [self save];
     }
 }
 
@@ -78,6 +87,7 @@ NSString *const QuotesPlist = @"quotes.plist";
         [self.favorites
          insertObject:[NSDictionary dictionaryWithObjectsAndKeys:author,@"author",quote,@"quote", nil]
          atIndex:index];
+        [self save];
     }
 }
 
@@ -87,6 +97,7 @@ NSString *const QuotesPlist = @"quotes.plist";
         [self.favorites
          insertObject:quote
          atIndex:index];
+        [self save];
     }
 }
 

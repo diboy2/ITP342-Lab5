@@ -17,6 +17,7 @@
 		3ACA821D1A9D6C7E00551B43 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3ACA821C1A9D6C7E00551B43 /* Images.xcassets */; };
 		3ACA82201A9D6C7E00551B43 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3ACA821E1A9D6C7E00551B43 /* LaunchScreen.xib */; };
 		3ACA823B1A9D77DC00551B43 /* QuotesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA823A1A9D77DC00551B43 /* QuotesModel.m */; };
+		56950F5D1AD6314B0061E332 /* TaDa.wav in Resources */ = {isa = PBXBuildFile; fileRef = 56950F5C1AD6314B0061E332 /* TaDa.wav */; };
 		56954B541AD5BF0700C3F968 /* tone.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 56954B531AD5BF0700C3F968 /* tone.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		3ACA822B1A9D6C7F00551B43 /* Lab5Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lab5Tests.m; sourceTree = "<group>"; };
 		3ACA82391A9D77DC00551B43 /* QuotesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuotesModel.h; sourceTree = "<group>"; };
 		3ACA823A1A9D77DC00551B43 /* QuotesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuotesModel.m; sourceTree = "<group>"; };
+		56950F5C1AD6314B0061E332 /* TaDa.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TaDa.wav; sourceTree = "<group>"; };
 		56954B531AD5BF0700C3F968 /* tone.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tone.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 		3ACA820F1A9D6C7E00551B43 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				56950F5C1AD6314B0061E332 /* TaDa.wav */,
 				56954B531AD5BF0700C3F968 /* tone.mp3 */,
 				3ACA82131A9D6C7E00551B43 /* AppDelegate.h */,
 				3ACA82141A9D6C7E00551B43 /* AppDelegate.m */,
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56954B541AD5BF0700C3F968 /* tone.mp3 in Resources */,
+				56950F5D1AD6314B0061E332 /* TaDa.wav in Resources */,
 				3ACA821B1A9D6C7E00551B43 /* Main.storyboard in Resources */,
 				3ACA82201A9D6C7E00551B43 /* LaunchScreen.xib in Resources */,
 				3ACA821D1A9D6C7E00551B43 /* Images.xcassets in Resources */,

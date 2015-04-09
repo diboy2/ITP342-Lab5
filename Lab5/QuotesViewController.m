@@ -10,9 +10,12 @@
 #import "QuotesModel.h"
 @interface QuotesViewController ()
 @property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer2;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quotesLabel;
 @property(strong,nonatomic) QuotesModel *model;
+
+@property (weak, nonatomic) IBOutlet UISwitch *soundSwitch;
 
 @end
 
@@ -24,10 +27,16 @@
     // Create Sound file Path
     NSString *path = [NSString stringWithFormat:@"%@/tone.mp3",[[NSBundle mainBundle] resourcePath]];
     NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
     // Initialize audio Player
     NSError *error;
     self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:&error];
+    // Audio Player 2
+    path = [NSString stringWithFormat:@"%@/TaDa.wav",[[NSBundle mainBundle] resourcePath]];
+    soundUrl = [NSURL fileURLWithPath:path];
+    
+    NSError *error2;
+    self.audioPlayer2 =[[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:&error2];
+    
     // Do any additional setup after loading the view, typically from a nib.
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc]
                                          initWithTarget:self
@@ -112,12 +121,18 @@
     NSString *quote = currentQuoteDict[@"quote"];
     NSString *author = currentQuoteDict[@"author"];
     // play audio
-    [self.audioPlayer play];
+    if(self.soundSwitch.on){
+        [self.audioPlayer play];
+    }
+    
     [self animateQuote:quote animateAuthor:author];
 }
 
 - (void) doubleTapRecognized: (UITapGestureRecognizer *) recognizer{
     [self.model addQuoteToFavorites];
+    if(self.soundSwitch.on){
+        [self.audioPlayer2 play];
+    }
 }
 
 - (void) leftSwipeGestureRecognized: (UITapGestureRecognizer *) recognizer{
@@ -132,7 +147,9 @@
     quoteString = [quoteString stringByAppendingString:@"."];
     NSLog(quoteString,nil);    NSString *quote = currentQuoteDict[@"quote"];
     NSString *author = currentQuoteDict[@"author"];
-    [self.audioPlayer play];
+    if(self.soundSwitch.on){
+        [self.audioPlayer play];
+    }
     [self animateQuote:quote animateAuthor:author];
 }
 
@@ -149,7 +166,9 @@
     NSLog(quoteString,nil);
     NSString *quote = currentQuoteDict[@"quote"];
     NSString *author = currentQuoteDict[@"author"];
-    [self.audioPlayer play];
+    if(self.soundSwitch.on){
+        [self.audioPlayer play];
+    }
     [self animateQuote:quote animateAuthor:author];
 }
 
@@ -171,7 +190,9 @@
         NSDictionary *currentQuoteDict = [self.model randomQuote];
         NSString *quote = currentQuoteDict[@"quote"];
         NSString *author = currentQuoteDict[@"author"];
-        [self.audioPlayer play];
+        if(self.soundSwitch.on){
+            [self.audioPlayer play];
+        }
         [self animateQuote:quote animateAuthor:author];
     }
 }

@@ -138,7 +138,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="baG-ku-RYL">
                                 <rect key="frame" x="16" y="28" width="568" height="88"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="YVh-e4-By0"/>
+                                    <constraint firstAttribute="height" constant="88" id="Qri-15-Tp0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -147,27 +147,44 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMi-zI-5Qn">
                                 <rect key="frame" x="16" y="221" width="568" height="58"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="58" id="ds3-eJ-lfI"/>
+                                    <constraint firstAttribute="height" constant="58" id="hau-OR-dOe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn Sound Off Or On:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijf-Xi-ttr">
+                                <rect key="frame" x="214" y="360" width="173" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="CnO-IF-krU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q1i-42-vX9">
+                                <rect key="frame" x="276" y="404" width="51" height="31"/>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="baG-ku-RYL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="OOZ-FE-J76"/>
-                            <constraint firstItem="EMi-zI-5Qn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="aJC-cc-Uoi"/>
-                            <constraint firstItem="EMi-zI-5Qn" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="c0Q-gQ-DxW"/>
-                            <constraint firstItem="baG-ku-RYL" firstAttribute="leading" secondItem="EMi-zI-5Qn" secondAttribute="leading" id="hnh-1v-7tb"/>
-                            <constraint firstItem="EMi-zI-5Qn" firstAttribute="trailing" secondItem="baG-ku-RYL" secondAttribute="trailing" id="jYQ-KH-H7h"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="EMi-zI-5Qn" secondAttribute="bottom" constant="272" id="sVN-P6-Vx3"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Q1i-42-vX9" secondAttribute="bottom" constant="116" id="2Ld-I9-qXS"/>
+                            <constraint firstItem="baG-ku-RYL" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="BbT-H5-awQ"/>
+                            <constraint firstItem="baG-ku-RYL" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="H0s-4j-Ajb"/>
+                            <constraint firstItem="Q1i-42-vX9" firstAttribute="top" secondItem="Ijf-Xi-ttr" secondAttribute="bottom" constant="23" id="Hr2-g6-Vc7"/>
+                            <constraint firstItem="Ijf-Xi-ttr" firstAttribute="centerX" secondItem="Q1i-42-vX9" secondAttribute="centerX" id="Qw8-RB-qe4"/>
+                            <constraint firstItem="baG-ku-RYL" firstAttribute="trailing" secondItem="EMi-zI-5Qn" secondAttribute="trailing" id="Tb4-Q3-wpY"/>
+                            <constraint firstItem="EMi-zI-5Qn" firstAttribute="centerX" secondItem="Ijf-Xi-ttr" secondAttribute="centerX" id="dfr-4Q-8sI"/>
+                            <constraint firstItem="EMi-zI-5Qn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="qy4-Wd-ptE"/>
+                            <constraint firstItem="baG-ku-RYL" firstAttribute="leading" secondItem="EMi-zI-5Qn" secondAttribute="leading" id="w2Y-Ae-X1V"/>
+                            <constraint firstItem="Ijf-Xi-ttr" firstAttribute="top" secondItem="EMi-zI-5Qn" secondAttribute="bottom" constant="81" id="w7N-yE-F7p"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Quote" image="Quote" id="Z7J-jR-0W2"/>
                     <connections>
                         <outlet property="authorLabel" destination="EMi-zI-5Qn" id="8Zv-6y-v0z"/>
                         <outlet property="quotesLabel" destination="baG-ku-RYL" id="gT0-ek-fNu"/>
+                        <outlet property="soundSwitch" destination="Q1i-42-vX9" id="WF3-Ec-vuu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -208,7 +225,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ME5-f5-9Ml" id="lRV-42-f91">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q80-Mm-9Ut">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q80-Mm-9Ut">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -258,7 +275,7 @@
         <scene sceneID="sdK-qt-kRY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0JW-rL-7QZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorites" id="va7-q0-uec"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="Favorites" id="va7-q0-uec"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5on-YQ-Khh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -275,6 +292,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Favorites" width="32" height="32"/>
         <image name="Literature" width="25" height="25"/>
         <image name="Quote" width="25" height="25"/>
     </resources>
